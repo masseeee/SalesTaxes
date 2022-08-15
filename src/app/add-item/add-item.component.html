@@ -1,0 +1,26 @@
+<div>
+  <h2>1. Add product(s)</h2>
+  <input matInput #inputText placeholder="Type in your product here.">
+  <button mat-raised-button color="primary" (click)="addItem(inputText.value)">Add</button>
+  <button mat-raised-button (click)="resetItem()">Reset</button>
+
+  <br><br/>
+
+  <table>
+    <tr *ngFor="let item of items">
+      <td>{{item.name}}</td>
+    </tr>
+  </table>
+
+  <br><br/>
+
+  <h2>2. Press red button if you entered all products and want to finish your shopping.</h2>
+  <button mat-raised-button color="warn" (click)="endShopping()">End shopping</button>
+
+  <br><br/>
+
+  <p>Sales Taxes: {{this.total_sales_taxes}}</p>
+  <p>Total: {{this.total_amount}}</p>
+
+</div>
+

@@ -37,12 +37,15 @@ export class AddItemComponent implements OnInit {
       }
     }
 
+    let _salesTaxes = rate_salesTaxes * Number(splitted[splitted.length-1]) *  Number(splitted[0]);
+    let _additional_salesTaxes = rate_additional_salesTaxes * Number(splitted[splitted.length-1]) *  Number(splitted[0]);
+
     const newItem: Item ={
       name: newString,
       quantity: Number(splitted[0]),
       price: Number(splitted[splitted.length-1]) *  Number(splitted[0]),
-      salesTaxes: rate_salesTaxes * Number(splitted[splitted.length-1]) *  Number(splitted[0]),
-      additional_salesTaxes: rate_additional_salesTaxes * Number(splitted[splitted.length-1]) *  Number(splitted[0]),
+      salesTaxes: Math.round(_salesTaxes * 100) / 100,
+      additional_salesTaxes: Math.round(_additional_salesTaxes * 100) / 100,
     }
 
     this.items.push(newItem)
@@ -57,7 +60,10 @@ export class AddItemComponent implements OnInit {
       this.total_additional_sales_taxes += this.items[i].additional_salesTaxes;
     }
     this.total_sales_taxes += this.total_additional_sales_taxes;
+    this.total_sales_taxes= Math.round(this.total_sales_taxes * 100) / 100;
     this.total_amount += this.total_sales_taxes;
+    this.total_amount = Math.round(this.total_amount * 100) / 100;
+
   }
 
   resetItem() {

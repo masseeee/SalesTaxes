@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
+## Setup for the project in angular framework
+
+1. Paste `git clone https://github.com/masseeee/SalesTaxes.git` in your selected directory.
+2. After your open the project with your development environment run `npm install`.
+3. Now follow the specific steps below.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

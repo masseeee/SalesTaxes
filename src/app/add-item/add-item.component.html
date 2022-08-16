@@ -1,11 +1,12 @@
 <div class="inside">
   <h2>1. Add product(s)</h2>
   <span class="block">
-    <input matInput #inputText placeholder="Type in your product here.">
+    <input matInput #inputText placeholder="Type in your product here." onclick="value=''">
     <button mat-raised-button color="primary" (click)="addItem(inputText.value)">Add</button>
     <button mat-raised-button (click)="resetItem()">Reset</button>
   </span>
 
+  <h2>Output of each single added product:</h2>
   <span class="block">
     <table>
       <tr *ngFor="let item of items">
@@ -14,9 +15,9 @@
     </table>
   </span>
 
-  <h2>2. Press red button if you entered all products and want to finish your shopping.</h2>
+  <h2>2. Press red button if you entered all products and want to finish your purchase.</h2>
   <span class="block">
-    <button mat-raised-button color="warn" (click)="endShopping()">End shopping</button>
+    <button mat-raised-button color="warn" (click)="endShopping()">End purchase</button>
 
     <h2>Output:</h2>
     <p>Sales Taxes: {{this.total_sales_taxes}}</p>
